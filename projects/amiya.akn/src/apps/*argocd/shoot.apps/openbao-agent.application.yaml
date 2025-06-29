@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: openbao-agent
+spec:
+  destination:
+    namespace: openbao-agent-system
+    # server: {{ .server }}
+  project: system
+  sources:
+    - ref: origin
+      repoURL: https://github.com/chezmoidotsh/arcane.git
+      targetRevision: main
+      path: defaults/kubernetes/openbao-agent/kustomize
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+      - Delete=confirm
+      - Prune=confirm
+      - ServerSideApply=true

@@ -5,6 +5,7 @@ kind: Kustomization
 resources:
   - cert-manager.application.yaml
   - external-secrets.application.yaml
+  - openbao-agent.application.yaml
   - tailscale.application.yaml
   - traefik.application.yaml
 

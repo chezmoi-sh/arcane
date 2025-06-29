@@ -1,0 +1,17 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  annotations:
+    argocd.argoproj.io/description: |
+      Grants system:auth-delegator permissions to the openbao-token-reviewer
+      ServiceAccount. This allows OpenBao to validate Kubernetes service account
+      tokens via the TokenReview API for authentication purposes.
+  name: openbao-token-reviewer-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:auth-delegator
+subjects:
+  - kind: ServiceAccount
+    name: openbao-token-reviewer
