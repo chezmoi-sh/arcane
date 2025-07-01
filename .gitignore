@@ -42,9 +42,15 @@ projects/*/src/**/charts/
 # Ignore all Nix result files and directories
 catalog/**/result
 
+# Ignore nonix local store cache
+.nonix-store/
+
 # pre-commit
 .pre-commit-config.yaml
 
 # Ignore all unencrypted files
 **/.decrypted~*.yaml
 **/*.UNSAFE.yaml
+
+# Ignore all AI sessions
+.cursor/sessions/

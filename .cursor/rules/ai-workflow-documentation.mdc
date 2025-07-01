@@ -145,6 +145,15 @@ Need to check grafana integration.]]></incorrect-example>
         </example>
       </examples>
     </non-negotiable>
+    <requirement priority="high">
+      <description>When referencing external resources (articles, RFCs, PRs, etc.) in session documentation, always include the direct URL in either the relevant history line or the 🔗 Références section.</description>
+      <examples>
+        <example title="External reference with URL">
+          <correct-example title="History entry with link" conditions="Citing an article" expected-result="URL included" correctness-criteria="History line or reference contains clickable link">- [17:55] **INFO** : Lecture de [l'article « Scaling HashiCorp Vault »](mdc:https:/sunil-tailor.medium.com/scaling-hashicorp-vault-policy-sprawl-part-1-1b0f599b6eae) pour préparer les conventions</correct-example>
+          <incorrect-example title="Missing link" conditions="Citing an article" expected-result="URL included" incorrectness-criteria="No URL provided in the entry">- [17:55] **INFO** : Lu un article sur Vault policy sprawl pour préparer les conventions</incorrect-example>
+        </example>
+      </examples>
+    </requirement>
   </requirements>
   <grammar>
     <grammar-entry title="Session Document Naming Pattern">
